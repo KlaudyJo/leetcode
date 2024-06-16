@@ -1,11 +1,7 @@
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        nums = sorted(nums)
-        for i in range(1, len(nums)):
-            if nums[i] == nums[i-1]:
-                return True
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        nums_set = set(nums)
+        if len(nums) != len(nums_set):
+            return True
         return False
+
