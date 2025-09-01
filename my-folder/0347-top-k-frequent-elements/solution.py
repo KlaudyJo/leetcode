@@ -1,13 +1,18 @@
-class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        
-        seen = dict()
-        for num in nums:
-            if num in seen:
-                seen[num] += 1
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        hash_map = {}
+
+        for i, n in enumerate(nums):
+            if n in hash_map:
+                hash_map[n] += 1
             else:
-                seen[num] = 1
-
-        sorted_items = sorted(seen.items(), key=lambda x: x[1], reverse=True)
-
+                hash_map[n] = 1
+        
+        sorted_items = sorted(hash_map.items(), key=lambda x: x[1], reverse=True)
         return [item[0] for item in sorted_items[:k]]
+        
