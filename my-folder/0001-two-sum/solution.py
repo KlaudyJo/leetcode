@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-
         hash_map = {}
 
         for i,n in enumerate(nums):
